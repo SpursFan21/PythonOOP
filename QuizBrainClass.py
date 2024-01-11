@@ -1,3 +1,5 @@
+# QuizBrainClass.py
+
 import random
 from QuestionModelClass import QuestionModel
 
@@ -5,7 +7,7 @@ class QuizBrain:
     def __init__(self, data):
         self.question_number = 0
         self.score = 0
-        self.question_list = [QuestionModel(question["text"], question["answer"]) for question in data.question_data]
+        self.question_list = [QuestionModel(question) for question in data.question_data["results"]]
 
     def next_question(self):
         if self.question_number < len(self.question_list):
@@ -34,4 +36,3 @@ class QuizBrain:
     def end_quiz(self):
         print("You've completed the quiz!")
         print(f"Your final score is: {self.score}/{len(self.question_list)}")
-
