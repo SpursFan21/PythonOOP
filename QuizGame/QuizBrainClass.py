@@ -1,7 +1,7 @@
 # QuizBrainClass.py
 
 import random
-from QuestionModelClass import QuestionModel
+from QuizGame.QuestionModelClass import QuestionModel
 
 class QuizBrain:
     def __init__(self, data):
